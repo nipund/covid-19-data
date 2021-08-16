@@ -92,7 +92,7 @@ class SriLanka:
         regex = (
             r"COVID-19 Vaccination (.*) District"  # Country(/Region)? Cumulative Cases"
         )
-        vax_info = re.search(regex, text).group(1).strip().replace("No", "")
+        vax_info = re.search(regex, text).group(1).strip().replace("No", "").replace(',', '')
         vax_info = re.sub("\s+", " ", vax_info)
         # Sentence to DataFrame
         allresults = []
